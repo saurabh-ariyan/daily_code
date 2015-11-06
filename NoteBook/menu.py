@@ -41,4 +41,22 @@ class Menu(object):
 		for note in notes:
 			print ("{0}: in {1} \n {2}".format(note_id, note_tags, note.memo))
 
-	
+	def add_note(self):
+		memo = input("Enter a memo: ")
+		self.notebook.new_note(memo)
+		print("Your note has been a added.")
+
+	def modify_note(self):
+		id = input("Enter a note id: ")
+		memo = input("Enter a memo: ")
+		tags = input("Enter tags: ")
+		if memo:
+			self.notebook.modify_memo(id, memo)
+		if tags:
+			self.notebook.modify_tags(id, tags)
+
+	def quit(self):
+		print("Thank you for using the notebook today. ")
+		sys.exit(0)
+
+		
