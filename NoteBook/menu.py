@@ -59,4 +59,6 @@ class Menu(object):
 		print("Thank you for using the notebook today. ")
 		sys.exit(0)
 
-		
+if __name__ =='__main__':
+	Menu().run()
+	
