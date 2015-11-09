@@ -41,6 +41,12 @@ class Menu(object):
 		for note in notes:
 			print ("{0}: in {1} \n {2}".format(note_id, note_tags, note.memo))
 
+	def search_notes(self):
+		filter = input("search for: ")
+		notes = self.notebook.search(filter)
+		self.search_notes(notes)
+		
+
 	def add_note(self):
 		memo = input("Enter a memo: ")
 		self.notebook.new_note(memo)
@@ -61,4 +67,4 @@ class Menu(object):
 
 if __name__ =='__main__':
 	Menu().run()
-	
+
