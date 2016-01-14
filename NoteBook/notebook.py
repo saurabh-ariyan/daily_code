@@ -57,14 +57,14 @@ class Notebook(object):
 
 
 		def modify_tags(self, note_id, tags):
-			'''Find the note with the given note_id and changeits tags
+			'''Find the note with the given note_id and change its tags
 			to the given value'''
 			note = self._find_note(note_id).tags 
 			if note:
 				note.tags = tags
 				return True
 			return False
-			
+
 
 		def search(self, filter):
 			'''Find all notes that match the given filter

@@ -9,7 +9,7 @@ class Menu(object):
 		"1": self.show_notes,
 		"2": self.search_notes,
 		"3": self.add_note,
-		"4": self.modfiy_note,
+		"4": self.modify_note,
 		"5": self.quit
 
 		}
@@ -35,17 +35,17 @@ class Menu(object):
 			else:
 				print ("{0} is not a valid choice.format(choice)")
 
-	def show_notes(self):
+	def show_notes(self, notes=None):
 		if not notes:
 			notes = self.notebook.notes
 		for note in notes:
-			print ("{0}: in {1} \n {2}".format(note_id, note_tags, note.memo))
+			print ("{0}: in {1} \n {2}".format(note.id, note.tags, note.memo))
 
 	def search_notes(self):
 		filter = input("search for: ")
 		notes = self.notebook.search(filter)
-		self.search_notes(notes)
-		
+		self.show_notes(notes)
+
 
 	def add_note(self):
 		memo = input("Enter a memo: ")
