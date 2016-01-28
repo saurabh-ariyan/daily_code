@@ -1,4 +1,7 @@
 var app = angular.module("flapperNews", []);
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/news');
+
 
 app.controller('MainCtrl', ['$scope', function($scope){
     $scope.test =  'Hello World!';
