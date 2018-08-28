@@ -1,0 +1,11 @@
+from itertools import product
+
+ORIGINAL = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'
+
+keywords = map(''.join, product(ORIGINAL, repeat=4))
+
+
+li = []
+
+for keyword in keywords:
+    li.append(keyword)
